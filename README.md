@@ -1,14 +1,3 @@
-# Participantes
-
-
-Lucca Bracco RM: 570175
-
-
-João Pedro Ferrari RM: 573037
-
-
-Vitor Nascimento RM: 571873
-
 #  Monitoramento de Sistemas Energéticos - Missão Espacial Experimental
 
 ## Participantes
