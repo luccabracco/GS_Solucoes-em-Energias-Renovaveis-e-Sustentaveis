@@ -6,7 +6,7 @@ class ModuloEspacial:
         self.comunicacao_ok = True
 
     def inserir_dados_manuais(self):
-        print("\n=== INSERÇÃO DE DADOS DO MÓDULO ===")
+        print("\n      === INSERÇÃO DE DADOS DO MÓDULO ===")
         try:
             self.temperatura = float(input("Digite a temperatura atual (°C): "))
             self.nivel_energia = float(input("Digite o nível de energia (0 a 100%): "))
@@ -39,20 +39,35 @@ class ModuloEspacial:
 
 def iniciar_missao():
     modulo = ModuloEspacial("Módulo de Sustentabilidade Hélios-1")
-    print("=" * 50)
-    print(" INICIANDO SISTEMA DE MONITORAMENTO ESPACIAL ")
-    print("=" * 50)
+    print("\n" + "=" * 50)
+    print("   INICIANDO SISTEMA DE MONITORAMENTO ESPACIAL")
 
     ciclo = 1
     while True:
-        print(f"\n===  CICLO DE OPERAÇÃO {ciclo}  ===")
+        print("=" * 50)
+        print("            >>> MENU PRINCIPAL <<<")
+        print("=" * 50 + "\n")
+        print("1 - Inserir dados operacionais")
+        print("0 - Sair do programa")
+
+        opcao = input("\nEscolha uma opção: ").strip()
+
+        if opcao == '0':
+            print("\nEncerrando o sistema de monitoramento.")
+            break
+        elif opcao != '1':
+            print("\n[ERRO] Opção inválida. Digite 1 para iniciar ou 0 para sair.")
+            continue
+
+        print(f"\n        >>> [ CICLO DE OPERAÇÃO {ciclo} ] <<<")
 
         sucesso = modulo.inserir_dados_manuais()
 
         if not sucesso:
             continue
 
-        print("\n=== RELATÓRIO DO SISTEMA ===")
+        print()
+        print("         === RELATÓRIO DO SISTEMA ===")
         print(f"Módulo Monitorado : {modulo.nome}")
         print(f"Temperatura       : {modulo.temperatura:.2f}°C")
         print(f"Energia Renovável : {modulo.nivel_energia:.2f}%")
