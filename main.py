@@ -15,7 +15,7 @@ class ModuloEspacial:
             self.comunicacao_ok = True if status_com == 's' else False
             return True
         except ValueError:
-            print("\n[ERRO] Entrada inválida! Por favor, insira apenas números para temperatura e energia.")
+            print("\nEntrada inválida! Por favor, insira apenas números para temperatura e energia.")
             return False
 
     def analisar_dados_e_decidir(self):
@@ -23,16 +23,16 @@ class ModuloEspacial:
         acoes = []
 
         if self.nivel_energia < 30.0:
-            alertas.append("ALERTA CRÍTICO: Nível de energia sustentável abaixo de 30%!")
-            acoes.append("AÇÃO: Desativando sistemas de suporte não essenciais para conservação de energia.")
+            alertas.append("CRÍTICO! Nível de energia sustentável abaixo de 30%!")
+            acoes.append("Desativando sistemas de suporte não essenciais para conservação de energia.")
 
         if self.temperatura > 45.0:
-            alertas.append("ALERTA: Superaquecimento detectado nos painéis.")
-            acoes.append("AÇÃO: Acionando sistema de resfriamento autônomo e redirecionando escudos térmicos.")
+            alertas.append("Superaquecimento detectado nos painéis.")
+            acoes.append("Acionando sistema de resfriamento autônomo e redirecionando escudos térmicos.")
 
         if not self.comunicacao_ok:
-            alertas.append("AVISO: Falha na telemetria e comunicação com a base da Terra.")
-            acoes.append("AÇÃO: Iniciando protocolo de reinicialização da antena principal.")
+            alertas.append("Falha na telemetria e comunicação com a base da Terra.")
+            acoes.append("Iniciando protocolo de reinicialização da antena principal.")
 
         return alertas, acoes
 
@@ -45,14 +45,14 @@ def iniciar_missao():
 
     ciclo = 1
     while True:
-        print(f"\n>>> [ CICLO DE OPERAÇÃO {ciclo} ] <<<")
+        print(f"\n===  CICLO DE OPERAÇÃO {ciclo}  ===")
 
         sucesso = modulo.inserir_dados_manuais()
 
         if not sucesso:
             continue
 
-        print("\n--- RELATÓRIO DO SISTEMA ---")
+        print("\n=== RELATÓRIO DO SISTEMA ===")
         print(f"Módulo Monitorado : {modulo.nome}")
         print(f"Temperatura       : {modulo.temperatura:.2f}°C")
         print(f"Energia Renovável : {modulo.nivel_energia:.2f}%")
@@ -61,23 +61,23 @@ def iniciar_missao():
         alertas, acoes = modulo.analisar_dados_e_decidir()
 
         if alertas:
-            print("\n[!] ALERTAS DO SISTEMA:")
+            print("\nALERTAS DO SISTEMA:")
             for alerta in alertas:
                 print(f"  - {alerta}")
 
         if acoes:
-            print("[*] DECISÕES AUTOMATIZADAS:")
+            print("DECISÕES AUTOMATIZADAS:")
             for acao in acoes:
                 print(f"  - {acao}")
 
         if not alertas and not acoes:
-            print("\n[+] Status Operacional: Estável. Nenhuma intervenção necessária.")
+            print("\nStatus Operacional: Estável. Nenhuma intervenção necessária.")
 
         print("-" * 50)
 
         continuar = input("\nDeseja inserir dados para um novo ciclo? (s/n): ").strip().lower()
         if continuar != 's':
-            print("\nEncerrando o sistema de monitoramento. Câmbio desligo!")
+            print("\nEncerrando o sistema de monitoramento.")
             break
 
         ciclo += 1
