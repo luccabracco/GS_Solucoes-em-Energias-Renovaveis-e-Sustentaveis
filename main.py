@@ -42,23 +42,25 @@ def iniciar_missao():
     print("\n" + "=" * 50)
     print("   INICIANDO SISTEMA DE MONITORAMENTO ESPACIAL")
 
-    ciclo = 1
-    while True:
-        print("=" * 50)
-        print("            >>> MENU PRINCIPAL <<<")
-        print("=" * 50 + "\n")
-        print("1 - Inserir dados operacionais")
-        print("0 - Sair do programa")
+    print("=" * 50)
+    print("            >>> MENU PRINCIPAL <<<")
+    print("=" * 50 + "\n")
+    print("1 - Inserir dados operacionais")
+    print("0 - Sair do programa")
 
+    while True:
         opcao = input("\nEscolha uma opção: ").strip()
 
         if opcao == '0':
             print("\nEncerrando o sistema de monitoramento.")
+            return
+        elif opcao == '1':
             break
-        elif opcao != '1':
+        else:
             print("\n[ERRO] Opção inválida. Digite 1 para iniciar ou 0 para sair.")
-            continue
 
+    ciclo = 1
+    while True:
         print(f"\n        >>> [ CICLO DE OPERAÇÃO {ciclo} ] <<<")
 
         sucesso = modulo.inserir_dados_manuais()
