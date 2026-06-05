@@ -2,12 +2,9 @@
 
 ## Participantes
 
-
-- Lucca Bracco RM: 570175
-
-- João Pedro Ferrari RM: 573037
-
-- Vitor Nascimento RM: 571873
+- Lucca Bracco / RM: 570175
+- João Pedro Ferrari / RM: 573037
+- Vitor Nascimento / RM: 571873
 
 ##  Introdução
 Este projeto é uma solução computacional desenvolvida para a Global Solution de Soluções em Energias Renováveis e Sustentáveis. O objetivo do sistema é monitorar as condições operacionais de uma missão espacial, focando no gerenciamento de energias renováveis e sustentáveis para garantir a segurança e eficiência do módulo.
@@ -21,3 +18,6 @@ O programa foi desenvolvido em Python e oferece as seguintes capacidades:
 * **Tomada de Decisão Automatizada:** Estruturas lógicas que reagem imediatamente a situações críticas, simulando ações de mitigação (ex: desativação de sistemas não essenciais se a energia descer abaixo dos 30%)
 * **Visualização Organizada:** Apresentação clara de relatórios de estado a cada ciclo operacional[cite: 14, 24].
 * **Ciclo Contínuo de Operação:** Permite testar múltiplos cenários de forma consecutiva sem necessidade de reiniciar a aplicação.
+
+## Link da Demonstração na Prática
+
